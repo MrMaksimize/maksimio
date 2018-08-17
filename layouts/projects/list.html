@@ -21,8 +21,7 @@
             <div class="section is-small">
                 <div class="columns is-multiline">
                     <!-- Ranges through content/projects/*.md -->
-                    {{ range .Data.Pages }}
-                    {{ if eq (mod (len (.Site.GetPage "section" "projects").Pages) 2) 0 }}
+                    {{ range $.Site.Data.content.projects}}
                     <div class="column is-half">
                     {{ else }}
                     <div class="column is-one-third">
@@ -42,7 +41,6 @@
                             </div>
                         </div>
                     </div>
-                    {{ end }}
                 </div>
             </div>
         </div>
