@@ -29,6 +29,7 @@
     <nav class="nav-center">
         {{ if (.Site.GetPage "page" "about") }}
         <a class="nav-item" href="#about">About</a>
+        {{ end }}
         {{ if .Site.Params.showProjects }}
         <a class="nav-item" href="#projects">Projects</a>
         {{ end }}
@@ -50,7 +51,7 @@
 {{ if (.Site.GetPage "page" "about") }}
 <div class="section" id="about">
     <div class="container">
-    <h2 class="title is-2 has-text-centered"></h2>
+    <h2 class="title is-2 has-text-centered">About</h2>
 
         <div class="columns"><!-- Avatar and about.md side by side except mobile -->
             {{ if .Site.Params.avatar }}
@@ -70,16 +71,14 @@
 <div class="container"><hr></div>
 {{ end }}
 
-
 <!-- Now for some cool projects -->
     {{ if .Site.Params.showProjects }}
-    <div class="section" id="project">
+    <div class="section" id="projects">
         {{ partial "projects.html" . }}
     </div><!-- End Projects section -->
 
     <div class="container"><hr></div>
     {{ end }}
-
 
 
 <!-- Let's show some blog posts -->
@@ -95,7 +94,7 @@
 {{ if (.Site.GetPage "page" "contact") }}
 <div class="section" id="contact">
     <div class="container has-text-centered">
-    <h2 class="title is-2"></h2>
+    <h2 class="title is-2">Contact</h2>
         <div class="markdown">
             {{ (.Site.GetPage "page" "contact").Content }}
         </div>
